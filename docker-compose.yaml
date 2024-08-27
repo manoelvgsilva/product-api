@@ -38,7 +38,7 @@ services:
   mongodb:
     image: mongo:latest
     command: [--auth]
-    container_name: stockdb
+    container_name: productdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: productAdmin
       MONGO_INITDB_ROOT_PASSWORD: productPassword
