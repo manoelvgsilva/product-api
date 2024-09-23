@@ -15,11 +15,11 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - 8888:8888
+      - 9092:9092
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: ZOOKEEPER:9999
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:99099, PLAINTEXT_HOST://localhost:8888
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:99099, PLAINTEXT_HOST://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
@@ -33,7 +33,7 @@ services:
     ports:
       - 2000:2000
     environment:
-      KAFKA_BROKERCONNECT: kafka:99099
+      KAFKA_BROKERCONNECT: kafka:29029
 
   mongodb:
     image: mongo:latest
@@ -43,7 +43,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: productAdmin
       MONGO_INITDB_ROOT_PASSWORD: productPassword
     ports:
-      - 65065:65065
+      - 27017:27017
     volumes:
       - mongo-data:/product/db
 
@@ -53,7 +53,7 @@ services:
       dockerfile: Dockerfile
     environment:
       SPRING_DATA_MONGODB_HOST: mongodb
-      SPRING_DATA_MONGODB_PORT: 65065
+      SPRING_DATA_MONGODB_PORT: 27017
       SPRING_DATA_MONGODB_DATABASE: productdb
     depends_on:
       - mongodb
