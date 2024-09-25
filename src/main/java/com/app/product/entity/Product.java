@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection = "products")
 public class Product {
-  private Long id;
+  private String id;
   private String name;
   private String description;
   private String category;
@@ -34,7 +34,7 @@ public class Product {
    * @param code the code
    * @param weight the weight
    */
-  public Product(Long id, String name, String description, String category,
+  public Product(String id, String name, String description, String category,
                  Double price, String font, Long code, Double weight) {
     this.id = id;
     this.name = name;
@@ -50,11 +50,11 @@ public class Product {
                  Double price, String font, Long code, Double weight) {
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

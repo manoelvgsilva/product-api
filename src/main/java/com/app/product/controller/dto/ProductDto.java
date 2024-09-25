@@ -15,7 +15,7 @@ import com.app.product.entity.Product;
  * @param weight the weight
  */
 public record ProductDto(
-    Long id,
+    String id,
     String name,
     String description,
     String category,
