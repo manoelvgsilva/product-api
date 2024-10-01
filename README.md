@@ -1,7 +1,7 @@
 # product-api
 
 api para registrar um produto em um sistema ecommerce contendo as
-seguintes rotas GET, POST E UPDATE
+seguintes rotas GET e POST
 
 # Pré requisitos
 
