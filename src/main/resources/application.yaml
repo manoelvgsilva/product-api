@@ -7,4 +7,4 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 topic:
-  stock:stock
+  product:product
